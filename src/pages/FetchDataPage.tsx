@@ -1,3 +1,5 @@
+import { CustomLoader } from '@/components/custom/CustomLoader'
+import ErrorPage from '@/components/custom/ErrorMessage'
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 
@@ -8,14 +10,14 @@ interface Todo {
     body: string
 }
 
-function FetchData() {
+function FetchDataPage() {
     const { data, isLoading, error } = useQuery({
         queryKey: ['todos'],
         queryFn: () => axios.get('https://jsonplaceholder.typicode.com/posts').then(res => res.data),
     })
 
-    if (isLoading) return <p>Loading...</p>
-    if (error) return <p>Error loading users</p>
+    if (isLoading) return <CustomLoader message='Loading...'></CustomLoader>
+    if (error) return <ErrorPage></ErrorPage>
 
     const todos: Todo[] = data
 
@@ -26,4 +28,4 @@ function FetchData() {
     )
 }
 
-export default FetchData
+export default FetchDataPage

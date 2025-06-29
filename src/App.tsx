@@ -1,19 +1,21 @@
 import { Routes, Route } from 'react-router-dom'
 
-import Counter from '@/pages/Counter'
-import FetchData from '@/pages/FetchData'
-import Form from '@/pages/Form'
-import Home from '@/pages/Home'
+import CounterPage from '@/pages/CounterPage'
+import FetchDataPage from '@/pages/FetchDataPage'
+import FormPage from '@/pages/FormPage'
+import HomePage from '@/pages/HomePage'
 import Layout from '@/Layout'
+import ReduxPage from "@/pages/ReduxPage"
 
 function App() {
   return (
     <Routes>
       <Route element={<Layout />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/counter" element={<Counter />} />
-        <Route path="/query" element={<FetchData />} />
-        <Route path="/form" element={<Form />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/counter" element={<CounterPage />} />
+        <Route path='/redux' element={<ReduxPage />}></Route>
+        <Route path="/query" element={<FetchDataPage />} />
+        <Route path="/form" element={<FormPage />} />
       </Route>
     </Routes>
   )

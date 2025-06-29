@@ -16,6 +16,13 @@ function Navbar() {
             </Link>
             |
             <Link
+                to="/redux"
+                className={cn(pathName.includes("/redux") ? "bg-accent" : "")}
+            >
+                Redux Counter
+            </Link>
+            |
+            <Link
                 to="/query"
                 className={cn(pathName.includes("/query") ? "bg-accent" : "")}
             >

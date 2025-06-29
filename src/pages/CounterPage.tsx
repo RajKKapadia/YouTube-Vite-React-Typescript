@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
 
-function Counter() {
+function CounterPage() {
     const [count, setCount] = useState<number>(0)
     const [error, setError] = useState<string>("")
     if (count < 0) {
@@ -34,4 +34,4 @@ function Counter() {
     )
 }
 
-export default Counter
+export default CounterPage
